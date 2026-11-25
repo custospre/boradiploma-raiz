@@ -3,10 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BoraDiploma</title>
-<script>location.replace('https://faculdade.boradiploma.com.br' + (location.pathname === '/' ? '/app.html' : location.pathname) + location.search + location.hash);</script>
+<title>BoraDiploma — o aplicativo do estudante</title>
+<meta name="description" content="Seus estudos e prazos na palma da mão. Escolha: Faculdade ou Escola.">
+<script>
+// links antigos (com caminho, ?k= de acesso ou #) continuam indo direto para o app Faculdade
+(function(){ var p=location.pathname, q=location.search, h=location.hash;
+  if((p!=='/' && p!=='/index.html') || q || h){
+    location.replace('https://faculdade.boradiploma.com.br' + (p==='/'||p==='/index.html' ? '/app.html' : p) + q + h); } })();
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#fff;
+    background:linear-gradient(160deg,#8a1c2e,#5a0f1c)}
+  .box{width:100%;max-width:460px;text-align:center}
+  .logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:18px}
+  .logo img{width:64px;height:64px;border-radius:14px;background:#fff}
+  .logo b{font-family:Georgia,serif;font-size:30px}
+  .logo b span{color:#e2b45a}
+  .logo small{display:block;font-size:11px;letter-spacing:.18em;color:#e2b45a;margin-top:2px}
+  h1{font-family:Georgia,serif;font-size:26px;margin:6px 0 4px}
+  h1 span{color:#e2b45a}
+  p.sub{margin:0 0 26px;opacity:.9}
+  a.op{display:flex;align-items:center;gap:16px;text-align:left;text-decoration:none;color:#fff;
+    background:rgba(255,255,255,.08);border:2px solid #e2b45a;border-radius:16px;padding:18px 20px;margin-bottom:14px;transition:background .15s}
+  a.op:hover,a.op:focus{background:rgba(255,255,255,.16)}
+  a.op .ic{font-size:34px}
+  a.op strong{display:block;font-size:20px}
+  a.op em{font-style:normal;font-size:14px;opacity:.85}
+  .rod{margin-top:18px;font-size:13px;opacity:.8}
+</style>
 </head>
-<body style="font-family:system-ui;padding:24px">
-O BoraDiploma Faculdade mudou para <a href="https://faculdade.boradiploma.com.br/app.html">faculdade.boradiploma.com.br</a>. Abrindo…
+<body>
+<div class="box">
+  <div class="logo"><img src="https://faculdade.boradiploma.com.br/icons/icon-192.png" alt=""><div><b>Bora<span>Diploma</span></b><small>O APLICATIVO DO ESTUDANTE</small></div></div>
+  <h1>Seus estudos e prazos <span>na palma da mão.</span></h1>
+  <p class="sub">Escolha o seu:</p>
+  <a class="op" href="https://faculdade.boradiploma.com.br/app.html"><span class="ic">🎓</span><span><strong>Faculdade e Pós</strong><em>Graduação, pós-graduação e concursos</em></span></a>
+  <a class="op" href="https://escola.boradiploma.com.br/"><span class="ic">📚</span><span><strong>Escola</strong><em>Ensino fundamental e médio</em></span></a>
+  <div class="rod">Período de teste grátis</div>
+</div>
 </body>
 </html>
